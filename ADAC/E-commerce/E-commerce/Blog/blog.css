@@ -1,0 +1,366 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.read-more-section {
+    background-image: url('../images/b19.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.overlay h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.overlay p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.blog-section {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.blog-post {
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.date {
+    font-size: 48px;
+    font-weight: bold;
+    color: #EAEAEA;
+    flex: 0 0 80px;
+    text-align: center;
+}
+
+.post-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    flex: 0 0 150px;
+    margin-left: 20px;
+}
+
+.post-content {
+    margin-left: 30px;
+    flex-grow: 1;
+}
+
+.post-content h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.post-content p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+}
+
+.read-more:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #212128; 
+    border-bottom: 1px solid #ccc; 
+    
+}
+
+.logo-img {
+    height: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #d9cbcb; 
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+.nav-links a:hover {
+    color: #e2e669; 
+    border-bottom: 2px solid #b3b331; 
+    padding-bottom: 2px;
+}
+
+.cart-icon img {
+    height: 54px; 
+}
+
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #b3b331;
+    position: relative;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-toggle-label span::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    transform: translateY(-10px);
+}
+
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transform: translateY(10px);
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+    background-color: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+    transform: rotate(45deg) translateY(0);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+    transform: rotate(-45deg) translateY(0);
+}
+
+@media (max-width: 576px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #212128;
+        flex-direction: column;
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+
+    .nav-toggle-label {
+        display: flex;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-icon {
+        display: block;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .nav-links {
+        width: 100%;
+        right: 0;
+        text-align: center;
+    }
+}
+
+.newsletter-section {
+    background-color: #002f6c;
+    color: white;
+    padding: 30px 20px; /* Add side padding for better alignment */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-section h2 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.newsletter-section p {
+    margin: 10px 0 20px;
+    font-size: 1.1rem;
+}
+
+.newsletter-input {
+    padding: 10px;
+    width: 300px;
+    max-width: 90%; /* Make input responsive */
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter-button {
+    padding: 10px 20px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.newsletter-button:hover {
+    background-color: #006666;
+}
+
+/* Center the input and button together on smaller screens */
+@media (max-width: 768px) {
+    .newsletter-input, .newsletter-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 40px 20px; /* Add side padding */
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Make it wrap on smaller screens */
+    font-size: 0.9rem;
+}
+
+.footer-section {
+    flex: 1; /* Allow sections to take equal space */
+    min-width: 200px;
+    margin: 20px; /* Adjust margin for better spacing */
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section li {
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-section ul li a:hover {
+    color: #007BFF;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
+
+.install-app {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.install-app img {
+    width: 100px;
+    height: 100px;
+}
+
+.payment-methods img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .install-app, .payment-methods {
+        justify-content: center;
+    }
+}
+
